@@ -1,0 +1,194 @@
+<!-- 
+Resources I used that aided me with the work throughout all my HTML’s:
+
+Resource Used (Adding Vector Graphics to the Web):
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web
+This MDN Web Docs article was used to understand the methods and best practices for 
+embedding vector graphics into web pages. It provided essential guidance on how to use SVGs 
+efficiently within HTML, enhancing the site's visual elements without sacrificing performance.
+
+Resource used (Bootstrap Getting Started):
+https://www.w3schools.com/bootstrap/bootstrap_get_started.asp
+This W3Schools tutorial was instrumental in learning how to incorporate Bootstrap into the 
+project. It guided me through the setup process and basic usage of the Bootstrap framework, 
+enabling me to quickly design responsive and modern web interfaces.
+
+Resource used (HTML in Acrobat):
+https://www.adobe.com/uk/acrobat/resources/document-files/web-files/html.html
+Adobe's resources on using HTML in Acrobat documents helped me understand how to 
+optimize HTML content for PDF conversion and embedding. This knowledge was crucial for 
+creating HTML documents that maintain formatting and functionality when converted to PDF
+
+Resource used (CSS Toggle Switch):
+https://www.w3schools.com/howto/howto_css_switch.asp
+This W3Schools tutorial taught me how to create a toggle switch with CSS. The switch is used 
+in the settings panel of the website to enable users to toggle between different themes or 
+settings easily. It provided a clear, step-by-step guide to building a functional and stylish switch, 
+which was integrated into the site’s UI for enhanced interactivity and user control.
+-->
+ 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+      <!-- Responsive meta tag to ensure the site scales well on different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Bootcamp</title>
+     <!-- Favicon created directly with SVG embedded in the href - these are on all of the HTMLS-->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>"
+    />
+    <!-- Bootstrap main CSS for styling -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS for additional styling -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start of Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-primary" href="#"
+          >Hello! <span class="username">Username</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <div class="progress">
+                <span class="progress-left">
+                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">
+                  <img src="images/trophy.svg" alt="trophy" class="img-fluid" />
+                </div>
+              </div>
+            </li>
+            <li class="nav-item get-certificate-link d-flex align-items-center">
+              <a class="nav-link" href="#">Get Certificate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Start of Phishing Activity Details -->
+    <div
+      id="phishingActivityIntro"
+      class="shadow-sm m-md-5 p-3 bg-white rounded"
+    >
+      <div class="activity-intro-header row g-0">
+        <div class="col-12 d-flex justify-content-end">
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+          data-bs-target="#goBackLoginModal">Back</a>
+        </div>
+      </div>
+
+      <div class="activity-intro-row row g-0">
+        <div class="col-12 p-3">
+          <h2 class="text-primary text-capitalize">What is Phishing?</h2>
+          <p>
+            A technique used to trick individuals into revealing sensitive
+            information, like bank account numbers, by posing as a trustworthy
+            entity or person in fraudulent emails or websites.
+          </p>
+        </div>
+      </div>
+
+      <div class="activity-intro-row row g-0">
+        <div class="col-12 p-3">
+          <h2 class="text-primary text-capitalize">
+            Common Tactics of Phishing
+          </h2>
+
+          <ul>
+            <li>
+              <span class="fw-bold">Email Spoofing:</span> Altering email
+              metadata due to lack of authentication in email protocols.
+            </li>
+            <li>
+              <span class="fw-bold">Deceptive Links:</span> Google Safe Browsing
+              flags potentially malicious content, protecting users from
+              deceptive links.
+            </li>
+            <li>
+              <span class="fw-bold">Fake Login Pages:</span> Phishing pages
+              trick users into divulging login credentials for email, social
+              media, or banking services.
+            </li>
+            <li>
+              <span class="fw-bold">Urgency or Threats:</span> Phishing induces
+              fear or urgency, pressuring victims to disclose sensitive
+              information or click malicious links.
+            </li>
+            <li>
+              <span class="fw-bold">Impersonation:</span> Attackers impersonate
+              others to deceive victims into divulging confidential data or
+              transferring money.
+            </li>
+            <li>
+              <span class="fw-bold">Malicious Attachments:</span>
+              Deceptive attachments install malware upon opening, capable of
+              data theft and destruction.
+            </li>
+            <li>
+              <span class="fw-bold">Social Engineering:</span>
+              Manipulating individuals to assist attackers' objectives through
+              various tactics.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="activity-intro-row row g-0">
+        <div class="col-12 p-3">
+          <h2 class="text-primary text-capitalize">
+            How to recognize phishing attempts
+          </h2>
+          <p>
+            Recognizing phishing means watching for signs like odd sender
+            addresses, urgent requests, weird links, personal info requests, bad
+            grammar, and unexpected files, and always verifying with the sender
+            before doing anything.
+          </p>
+        </div>
+      </div>
+
+      <div class="activity-intro-footer row g-0">
+        <div class="col-12">
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#startPhishingActivityModal"
+            >Next</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- External JavaScript file -->
+    <script src="script/app.js"></script>
+    <!-- Bootstrap JavaScript bundle for responsive features -->
+    <script src="script/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

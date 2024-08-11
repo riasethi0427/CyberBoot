@@ -1,0 +1,11 @@
+<!-- 
+https://www.figma.com/ 
+I used this resource to layout my images and pages for this program
+https://undraw.co/ 
+I used this resource to find free vector stock images for my program so the images 
+are displayed with high-quality 
+ -->
+<svg width="54" height="30" viewBox="0 0 54 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="1" width="28" height="28" rx="2" stroke="white" stroke-width="2"/>
+<path d="M39.3416 12.5H48.6582C48.823 12.5007 48.9839 12.5502 49.1206 12.6424C49.2572 12.7345 49.3635 12.8651 49.4259 13.0176C49.4884 13.1702 49.5042 13.3378 49.4714 13.4993C49.4386 13.6608 49.3586 13.8089 49.2416 13.925L44.5916 18.575C44.5141 18.6531 44.4219 18.7151 44.3204 18.7574C44.2188 18.7997 44.1099 18.8215 43.9999 18.8215C43.8899 18.8215 43.781 18.7997 43.6794 18.7574C43.5779 18.7151 43.4857 18.6531 43.4082 18.575L38.7582 13.925C38.6412 13.8089 38.5612 13.6608 38.5284 13.4993C38.4956 13.3378 38.5114 13.1702 38.5738 13.0176C38.6363 12.8651 38.7425 12.7345 38.8792 12.6424C39.0158 12.5502 39.1767 12.5007 39.3416 12.5Z" fill="white"/>
+</svg>

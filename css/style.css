@@ -1,0 +1,555 @@
+/* Color variables for consistency */
+:root {
+  --primary-color: #5375e2;
+  --bs-primary: #5375e2;
+  --background-color: #f6f8fe;
+  --success-color: #0f9918;
+  --error-color: #e54545;
+  --gray-1: #19191a;
+  --gray-2: #333333;
+  --gray-3: #4d4d4d;
+  --gray-4: #808080;
+  --gray-5: #bfbfbf;
+  --gray-6: #e6e6e6;
+  --gray-7: #f0f0f0;
+  --grayscale-white: #ffffff;
+}
+
+/* Basic reset and setting height, width for html and body */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color) !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Styling for all heading tags to be bold */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+/* Button styling */
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 3px;
+  min-width: 150px;
+}
+
+/* Primary button styling */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+  background-color: var(--grayscale-white);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Secondary button styling */
+.btn-secondary {
+  background-color: var(--gray-6);
+  color: var(--gray-4);
+  border-color: var(--gray-6);
+}
+
+/* Secondary button hover effect */
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Form control focus styling */
+.form-control:focus {
+  border-color: #000;
+  box-shadow: none;
+}
+/* 
+Resource used (Focus Selector):
+https://www.w3schools.com/cssref/sel_focus.php
+I used this W3Schools page to understand how the :focus selector works in CSS. This 
+knowledge allowed me to imprpve the accessibility of form inputs by applying specific styles 
+when they are focused, improving user interaction and visibility.
+*/
+
+/* Popup screen header color */
+.popup-screen h1 {
+  color: var(--primary-color);
+}
+
+/* Popup screen paragraph styling */
+.popup-screen p {
+  color: var(--gray-4);
+  font-size: 1.5rem;
+}
+
+/* Modal dialog positioning */
+.modal-dialog {
+  top: 50%;
+  transform: translateY(-58%) !important;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #fff;
+  padding: 0.5rem 2.5rem;
+}
+
+/* Navbar brand styling */
+.navbar-brand .username {
+  color: var(--gray-4);
+  font-weight: normal;
+}
+
+/* Circular progress SVG styling */
+svg.circular-progress {
+  background-image: url("../images/trophy.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+/* 
+Resource used (Using SVGs in CSS and HTML):
+https://www.freecodecamp.org/news/use-svg-images-in-css-html/
+This FreeCodeCamp article provided a comprehensive guide on how to embed and style SVG 
+images within HTML and CSS. I used this information to include scalable vector graphics in 
+the application, which enhances the visual appeal while keeping the site's performance optimized.
+*/
+
+/* Background circle in circular progress */
+.circular-progress circle {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.circular-progress circle.bg {
+  stroke: #ddd;
+}
+
+/* Foreground circle in circular progress */
+.circular-progress circle.fg {
+  transform: rotate(-90deg);
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: 628.32;
+  stroke-dashoffset: 600;
+  transition: stroke-dasharray 0.3s linear 0s;
+  stroke: var(--primary-color);
+}
+/* 
+Resource used (Circle Bar Styling):
+https://codepen.io/jo-asakura/pen/NWWrWj
+I applied the concept of creating a circular progress bar from this CodePen example to design the user's progress display in the course. The example helped me understand how to use CSS 
+to create circular shapes and animate them according to progress metrics.
+*/
+
+/* Link styling inside get-certificate */
+.get-certificate-link a {
+  color: var(--gray-4);
+}
+
+/* Primary text color override */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+/* Certificate background and styling */
+.certificate {
+  background-image: url("certificate-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.certificate-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Certificate content styling */
+.certificate-content {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Background and border utility classes */
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.bg-gray-7 {
+  background-color: var(--gray-7) !important;
+}
+
+.border-gray-5 {
+  border-color: var(--gray-5) !important;
+}
+
+.text-gray-4 {
+  color: var(--gray-4) !important;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  margin-bottom: -5px;
+  height: 20px;
+  border: 2px solid var(--blue);
+  background-color: transparent;
+  transition: 0.2s all ease-in-out;
+  border: 1px solid var(--gray-5);
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border: 1px solid #fff;
+}
+
+/* Styles for mail items and their interaction */
+.mail-item {
+  cursor: pointer;
+  color: var(--gray-4);
+}
+
+/* Style for mail count badge */
+.mail-count {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%; /* Circular shape */
+  background-color: var(--primary-color); /* Primary color background */
+  color: #fff; /* White text color */
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Hover effect for mail items */
+.mail-item:hover {
+  background-color: #fff;
+}
+
+/* Style for mail subject */
+.mail-subject {
+  font-weight: bold;
+  color: var(--gray-3);
+}
+
+/* Hover effect for mail subject */
+.mail-subject:hover {
+  color: var(--primary-color); /* Highlight with primary color on hover */
+  cursor: pointer;
+}
+
+/* Style for sender's name */
+.mail-from {
+  color: var(--gray-3);
+}
+
+/* Style for user profile icon */
+.user-profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%; /* Circular shape */
+  overflow: hidden;
+  background-color: var(--primary-color);
+  color: #fff; /* White text */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for quiz elements */
+.question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.option-box {
+  border: 1px solid var(--gray-6);
+  border-radius: 0.25rem;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.quiz-container {
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-container input[type="radio"] {
+  min-width: 1rem;
+}
+/* 
+Resource used (Element Translation):
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate
+The MDN Web Docs on the translate transform function were instrumental in learning how to 
+move elements across the screen effectively. This function was particularly useful for creating 
+dynamic, interactive UI components that adjust their position based on user interactions.
+*/
+
+/* Style for score display */
+.score-box {
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  padding: 10px;
+  color: var(--primary-color);
+}
+.correct {
+  color: var(--success-color); 
+}
+
+.incorrect {
+  color: var(--error-color);
+}
+
+/* Form check styles for quiz */
+#quizForm .form-check {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+}
+#quizForm .form-check-input {
+  margin-right: 1rem;
+}
+
+.question-image {
+  background-position: 90% 95%;
+  background-repeat: no-repeat;
+  background-image: url("../images/question-marks.png") !important;
+}
+
+/* Negative margin utility */
+.mt-negative-3rem {
+  margin-top: -3rem;
+}
+
+/* Background section for password activities */
+.password-background-section {
+  background-image: url("../images/password-activity-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  color: #ffffff; /* White text for contrast */
+}
+
+/* Chat screen styles */
+#chatActivityScreen .chat-col {
+  position: relative;
+}
+
+/* Decorative before and after pseudoelements for chat */
+.chat-col::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  background-image: url("../images/chat-girl.svg");
+  top: -200px;
+  left: -33%;
+  background-repeat: no-repeat;
+}
+
+.chat-col::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: url("../images/chat-boy.svg");
+  bottom: -400px;
+  right: -45%;
+  background-repeat: no-repeat;
+}
+
+/* Chat bubble styles */
+.chat-question,
+.chat-reply {
+  max-width: 65%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.chat-question {
+  margin-left: 10px;
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border-bottom-left-radius: 0;
+  text-align: left;
+}
+
+.chat-reply {
+  margin-right: 10px;
+  background-color: #f8f9fa;
+  color: black;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+  text-align: right;
+}
+
+/* Chat window layout configuration */
+.chat-window {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Styling for chat replies indicating success or danger (errors) */
+.chat-reply.bg-success,
+.chat-reply.bg-danger {
+  color: white;
+}
+
+/* Styling for a centered table display*/
+.table-wrapper {
+  color: black;
+  display: table;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+}
+
+/* Styling for the certificate container and center contents */
+.certificate-container {
+  width: 100vw;
+  min-height: 563px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Style for logo elements using the primary color */
+.logo {
+  color: #5375e2;
+}
+
+/* Styling for banner text of certificate */
+.marquee {
+  color: #5375e2;
+  font-size: 48px;
+  margin: 20px;
+}
+
+/* General margin styling for assignment blocks */
+.assignment {
+  margin: 20px;
+}
+
+/* Styling for a person's name or identifier in a larger, italic font */
+.person {
+  border-bottom: 2px solid black; /* Underline effect */
+  font-size: 32px;
+  font-style: italic;
+  margin: 20px auto;
+  width: 400px;
+}
+
+/* General margin styling for explanatory text or reasons */
+.reason {
+  margin: 20px;
+}
+
+/* Media queries for print: Hide certain elements when printing the page */
+@media print {
+  #save-pdf {
+    display: none;
+  }
+  #navbar.navbar {
+    display: none !important;
+  }
+  .score-box {
+    display: none !important;
+  }
+}
+
+/* Responsive adjustments for devices with max-width of 1199px */
+@media (max-width: 1199px) {
+  .chat-col::before {
+    width: 350px;
+    height: 500px;
+    top: -250px;
+    left: -40%;
+    transform: scale(0.7); /* Scale down chat decorations for smaller screens */
+  }
+
+  .chat-col::after {
+    width: 500px;
+    height: 500px;
+    bottom: -360px;
+    right: -55%;
+    transform: scale(0.7);
+  }
+}
+/* 
+Resource used (Responsive Scaling):
+https://stackoverflow.com/questions/35249074/how-do-i-scale-the-size-of-the-elements-in-my-html-according-to-screen-size
+This Stack Overflow discussion provided insights on scaling HTML elements according to the 
+screen size, ensuring that the layout of the course adapts responsively across different devices. 
+I implemented these scaling techniques to improve user experience on various screen sizes.
+*/
+
+@media (max-width: 991px) {
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+  .btn-primary {
+    min-width: 100px;
+  }
+  .btn-outline-primary {
+    min-width: 100px;
+  }
+  .btn-secondary {
+    min-width: 100px;
+  }
+  .popup-screen h1 {
+    font-size: 2rem;
+  }
+  .popup-screen p {
+    font-size: 1.2rem;
+  }
+  .popup-screen .col-lg-6:nth-child(2) {
+    display: none;
+  }
+
+  .chat-col::before {
+    display: none;
+  }
+  .chat-col::after {
+    display: none;
+  }
+
+  #togglePassword {
+    min-width: 60px;
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 767px) {
+  .popup-screen h1 {
+    font-size: 1.4rem;
+  }
+  .popup-screen p {
+    font-size: 1rem;
+  }
+}

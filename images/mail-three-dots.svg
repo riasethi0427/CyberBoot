@@ -1,0 +1,19 @@
+<!-- 
+https://www.figma.com/ 
+I used this resource to layout my images and pages for this program
+https://undraw.co/ 
+I used this resource to find free vector stock images for my program so the images 
+are displayed with high-quality 
+ -->
+<svg width="106" height="30" viewBox="0 0 106 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_361_2413)">
+<path d="M88.9998 5C90.5646 5 91.8332 3.88071 91.8332 2.5C91.8332 1.11929 90.5646 0 88.9998 0C87.435 0 86.1665 1.11929 86.1665 2.5C86.1665 3.88071 87.435 5 88.9998 5Z" fill="white"/>
+<path d="M88.9998 17.5C90.5646 17.5 91.8332 16.3807 91.8332 15C91.8332 13.6193 90.5646 12.5 88.9998 12.5C87.435 12.5 86.1665 13.6193 86.1665 15C86.1665 16.3807 87.435 17.5 88.9998 17.5Z" fill="white"/>
+<path d="M88.9998 30C90.5646 30 91.8332 28.8807 91.8332 27.5C91.8332 26.1193 90.5646 25 88.9998 25C87.435 25 86.1665 26.1193 86.1665 27.5C86.1665 28.8807 87.435 30 88.9998 30Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_361_2413">
+<rect width="34" height="30" fill="white" transform="translate(72)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,289 @@
+<!-- 
+Resources I used that aided me with the work throughout all my HTML’s:
+
+Resource Used (Adding Vector Graphics to the Web):
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web
+This MDN Web Docs article was used to understand the methods and best practices for 
+embedding vector graphics into web pages. It provided essential guidance on how to use SVGs 
+efficiently within HTML, enhancing the site's visual elements without sacrificing performance.
+
+Resource used (Bootstrap Getting Started):
+https://www.w3schools.com/bootstrap/bootstrap_get_started.asp
+This W3Schools tutorial was instrumental in learning how to incorporate Bootstrap into the 
+project. It guided me through the setup process and basic usage of the Bootstrap framework, 
+enabling me to quickly design responsive and modern web interfaces.
+
+Resource used (HTML in Acrobat):
+https://www.adobe.com/uk/acrobat/resources/document-files/web-files/html.html
+Adobe's resources on using HTML in Acrobat documents helped me understand how to 
+optimize HTML content for PDF conversion and embedding. This knowledge was crucial for 
+creating HTML documents that maintain formatting and functionality when converted to PDF
+
+Resource used (CSS Toggle Switch):
+https://www.w3schools.com/howto/howto_css_switch.asp
+This W3Schools tutorial taught me how to create a toggle switch with CSS. The switch is used 
+in the settings panel of the website to enable users to toggle between different themes or 
+settings easily. It provided a clear, step-by-step guide to building a functional and stylish switch, 
+which was integrated into the site’s UI for enhanced interactivity and user control.
+-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Responsive meta tag to ensure the site scales well on different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Bootcamp</title>
+    <!-- Favicon created directly with SVG embedded in the href - these are on all of the HTMLS-->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>"
+    />
+    <!-- Bootstrap icons CSS for icons usage across the site -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- Bootstrap main CSS for styling -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS for additional styling -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start of Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-primary" href="#"
+          >Hello! <span class="username">Username</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <div class="progress">
+                <span class="progress-left">
+                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">
+                  <img src="images/trophy.svg" alt="trophy" class="img-fluid" />
+                </div>
+              </div>
+            </li>
+            <!-- Link for obtaining a certificate, with click event handler -->
+            <li class="nav-item get-certificate-link d-flex align-items-center">
+              <a class="nav-link" href="#">Get Certificate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Login Screen -->
+    <div
+      id="loginScreen"
+      class="d-none container vh-100 d-flex align-items-center"
+    >
+      <div class="row g-0 w-100">
+        <div
+          class="col-md-6 align-items-center d-flex flex-column justify-content-center text-center shadow p-5 bg-white rounded"
+        >
+          <h2 class="text-capitalize">Welcome To Online Safety Training!</h2>
+          <p>
+            Please enter your name to begin. This will be the name displayed on
+            your certificate.
+          </p>
+
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter Here"
+            />
+            <button
+              onclick="validateUserName()"
+              class="btn btn-secondary mt-3 shadow-sm"
+            >
+              Start Training
+            </button>
+
+            <div
+              style="display: none"
+              class="alert alert-danger mt-3"
+              id="alert"
+              role="alert"
+            >
+              Please enter your name
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-md-flex d-none">
+          <img
+            src="images/user-login.svg"
+            class="img-fluid"
+            alt="Cyber Security"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- End of Login Screen -->
+
+    <!-- Start of eMail Section -->
+    <div id="emailSection" class="d-none shadow-sm m-md-5 p-3 bg-white rounded">
+      <div class="row g-0">
+        <div class="col-lg-3">
+          <img
+            src="images/email.svg"
+            alt="email"
+            class="img-fluid email-image"
+          />
+
+          <div class="row g-0">
+            <div class="col-12">
+              <div class="mail-sidebar m-3 ms-0">
+                <div
+                  class="mail-sidebar-item d-flex justify-content-between p-3 border border-1 border-primary align-items-center"
+                >
+                  <div>
+                    <img
+                      src="images/inbox.svg"
+                      alt="mail-inbox"
+                      class="img-fluid m-1"
+                    />
+                    <span class="fw-bold text-primary">Inbox</span>
+                  </div>
+                  <div class="mail-count">5</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="row g-0 justify-content-end mb-3">
+            <div class="col d-flex justify-content-end">
+              <!-- Start of Scoreboard Section -->
+              <div class="container mt-3">
+                <div class="row justify-content-end">
+                  <!-- Scoreboard -->
+                  <div class="col-lg-3 col-md-4 col-sm-10 mb-4">
+                    <div
+                      class="score-box p-3 rounded shadow d-inline-block bg-white"
+                    >
+                      <span class="fw-bold">Score</span>
+                      <div class="correct">Correct: 5</div>
+                      <div class="incorrect">Incorrect: 3</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Scoreboard Section -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-3">
+              <div
+                class="mail-top-bar bg-primary d-flex p-3 justify-content-between"
+              >
+                <div class="mail-top-bar-left">
+                  <div class="mail-top-bar-left-icon">
+                    <img
+                      src="images/mail-checkbox.svg"
+                      alt="mail-checkbox"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="mail-top-bar-right">
+                  <div class="mail-top-bar-right-icon">
+                    <img
+                      src="images/mail-three-dots.svg"
+                      alt="mail-three-dots"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <div class="mail-listing bg-gray-7"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of eMail Section -->
+    <!-- Start of Scoreboard Section -->
+    <div id="scoreBoxContainer" class="container mt-3">
+      <div class="row justify-content-end">
+        <!-- Scoreboard -->
+        <div class="col-lg-3 col-md-4 col-sm-10 mb-4">
+          <div class="score-box p-3 rounded shadow d-inline-block bg-white">
+            <span class="fw-bold">Score</span>
+            <div class="correct">Correct: 5</div>
+            <div class="incorrect">Incorrect: 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Scoreboard Section -->
+    <!-- Start of Quiz Content Section -->
+    <div id="quizContainer" class="d-none container mt-mb-3">
+      <div class="row justify-content-center">
+        <!-- Quiz Content -->
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <div class="quiz-container mb-3 p-4 rounded shadow bg-white">
+            <!-- Quiz Question -->
+            <form action="#" id="quizForm"></form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Quiz Content Section -->
+
+    <!-- Chat Activity Screen  -->
+    <div
+      id="chatActivityScreen"
+      class="container h-100 d-flex mt-5 pt-5 align-items-start"
+    >
+      <div class="row g-0 w-100 justify-content-center align-items-center">
+        <div
+          class="chat-col col-md-7 align-items-center d-flex flex-column justify-content-center shadow p-5 bg-white rounded"
+        >
+          <h4 class="text-capitalize mb-5">
+            Choose the most appropriate answer
+          </h4>
+          <div class="chat-window"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Chat Activity Screen -->
+
+    <!-- External JavaScript file -->
+    <script src="script/app.js"></script>
+    <!-- Bootstrap JavaScript bundle for responsive features -->
+    <script src="script/bootstrap.bundle.min.js"></script>
+    <script>
+      displayChatQuestion();
+    </script>
+  </body>
+</html>
